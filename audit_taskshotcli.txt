@@ -1,0 +1,144 @@
+=== AUDIT START: lun 19 ene 2026 23:14:08 CET ===
+
+=== 1. GIT STATUS ===
+En la rama master
+
+No hay commits todavía
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	.gitignore
+	README.md
+	audit_taskshotcli.txt
+	pyproject.toml
+	scripts/
+	src/
+	tests/
+
+no hay nada agregado al commit pero hay archivos sin seguimiento presentes (usa "git add" para hacerles seguimiento)
+
+=== GIT LOG ===
+fatal: tu rama actual 'master' no tiene ningún commit todavía
+No commits yet
+
+=== 2. PROJECT STRUCTURE ===
+drwxr-xr-x code code 172 B  Mon Jan 19 23:14:08 2026 .
+drwxr-xr-x code code  48 B  Mon Jan 19 23:03:45 2026 ..
+drwxr-xr-x code code  82 B  Mon Jan 19 23:14:08 2026 .git
+.rw-r--r-- code code  44 B  Mon Jan 19 23:05:34 2026 .gitignore
+drwxr-xr-x code code  64 B  Mon Jan 19 23:08:42 2026 .pytest_cache
+.rw-r--r-- code code 545 B  Mon Jan 19 23:14:08 2026 audit_taskshotcli.txt
+.rw-r--r-- code code 588 B  Mon Jan 19 23:05:30 2026 pyproject.toml
+.rw-r--r-- code code 1.6 KB Mon Jan 19 23:08:53 2026 README.md
+drwxr-xr-x code code  30 B  Mon Jan 19 23:07:37 2026 scripts
+drwxr-xr-x code code  42 B  Mon Jan 19 23:07:51 2026 src
+drwxr-xr-x code code  46 B  Mon Jan 19 23:08:42 2026 tests
+--- FIND ---
+./audit_taskshotcli.txt
+./.git/config
+./.git/description
+./.git/HEAD
+./.git/hooks/applypatch-msg.sample
+./.git/hooks/commit-msg.sample
+./.git/hooks/fsmonitor-watchman.sample
+./.git/hooks/post-update.sample
+./.git/hooks/pre-applypatch.sample
+./.git/hooks/pre-commit.sample
+./.git/hooks/pre-merge-commit.sample
+./.git/hooks/prepare-commit-msg.sample
+./.git/hooks/pre-push.sample
+./.git/hooks/pre-rebase.sample
+./.git/hooks/pre-receive.sample
+./.git/hooks/push-to-checkout.sample
+./.git/hooks/sendemail-validate.sample
+./.git/hooks/update.sample
+./.gitignore
+./.git/info/exclude
+./pyproject.toml
+./.pytest_cache/CACHEDIR.TAG
+./.pytest_cache/.gitignore
+./.pytest_cache/README.md
+./README.md
+./scripts/init.ps1
+./scripts/init.sh
+./src/tskcli/cli.py
+./src/tskcli.egg-info/dependency_links.txt
+./src/tskcli.egg-info/entry_points.txt
+./src/tskcli.egg-info/PKG-INFO
+./src/tskcli.egg-info/requires.txt
+./src/tskcli.egg-info/SOURCES.txt
+./src/tskcli.egg-info/top_level.txt
+./src/tskcli/__init__.py
+./src/tskcli/logic.py
+./src/tskcli/model.py
+./src/tskcli/storage.py
+./tests/__pycache__/test_core.cpython-312-pytest-9.0.2.pyc
+./tests/test_core.py
+
+=== 3. TESTS ===
+......                                                                   [100%]
+6 passed in 0.04s
+
+=== 4. INSTALLATION ===
+Repo Dir: /home/code/Documentos/CodeDir/MyUtils/TaskShotCLI
+Adding alias to /home/code/.zshrc...
+Success! Added 'tsk' alias.
+Please run: source /home/code/.zshrc
+Or restart your terminal to use 'tsk'.
+
+--- tsk --help ---
+usage: tsk [-h] {add,list,done,delete,del,search,config} ...
+
+TaskShotCLI - Frictionless Task Manager
+
+positional arguments:
+  {add,list,done,delete,del,search,config}
+                        Command
+    add                 Add a new task
+    list                List tasks
+    done                Complete task
+    delete (del)        Delete tasks
+    search              Search tasks
+    config              Manage config
+
+options:
+  -h, --help            show this help message and exit
+
+=== 5. PRUEBA FUNCIONAL REAL ===
+> tsk 'Llamar a Jordi'
+✓ Task created: 1 - Llamar a Jordi
+> tsk 'Revisar logs prod' --today -p high
+✓ Task created: 2 - Revisar logs prod
+> tsk list
+                                        
+    ID    S       Pri              Due  
+ ────────────────────────────────────── 
+     2    ●       HIGH           Today  
+     1    ●                             
+                                        
+> tsk done 1
+✓ Task 1 marked as done.
+> tsk delete 1,2,3
+✓ Deleted 2 tasks: 1, 2
+> tsk del 4 7 12
+No tasks matched the provided IDs.
+> tsk search 'logs'
+No tasks found (search results: 'logs')
+> tsk config show
+{
+    'sort_order': 'desc',
+    'show_completed': True
+}
+> tsk config set sort_order asc
+✓ Config updated: sort_order = asc
+> tsk list
+No tasks found (tasks)
+
+=== 6. ARCHIVO DE DATOS (~/.tsk) ===
+{
+  "config": {
+    "sort_order": "asc",
+    "show_completed": true
+  },
+  "tasks": []
+}

@@ -3,3 +3,12 @@ __pycache__/
 .pytest_cache/
 .tsk
 .env
+# Python packaging
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+audit_taskshotcli.log
