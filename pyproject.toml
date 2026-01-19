@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tskcli"
+version = "0.1.0"
+description = "Micro task manager for terminal"
+authors = [
+  { name="Antigravity", email="antigravity@example.com" },
+]
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "rich",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/example/tskcli"
+
+[project.scripts]
+tsk = "tskcli.cli:main"
