@@ -1,75 +1,75 @@
 # TaskShotCLI (tsk)
 
-Micro gestor de tareas ultra rápido para terminal. Captura tareas al vuelo sin fricción.
+Ultra-fast micro task manager for the terminal. Capture tasks on the fly without friction.
 
-## Características
+## Features
 
-- 🚀 **Rápido**: Un comando para crear, listar, completar.
-- 📂 **Local**: Todo se guarda `~/.tsk` (JSON). Sin nubes ni logins.
-- 🎨 **Bonito**: Interfaz limpia usando `rich`.
-- 🔍 **Potente**: Prioridades, fechas, búsqueda, filtros.
-- 🛠 **Multiplataforma**: Linux, macOS, Windows (PowerShell).
+- 🚀 **Fast**: One command to create, list, and complete tasks.
+- 📂 **Local**: Everything is stored in `~/.tsk` (JSON). No cloud, no logins.
+- 🎨 **Clean**: Simple interface powered by `rich`.
+- 🔍 **Powerful**: Priorities, dates, search, and filters.
+- 🛠 **Cross-platform**: Linux, macOS, Windows (PowerShell).
 
-## Instalación
+## Installation
 
 ### Linux / macOS
 
-1. Clonar el repositorio:
+1. Clone the repository:
    ```bash
    git clone https://github.com/tu-usuario/TaskShotCLI.git
    cd TaskShotCLI
    ```
-2. Ejecutar script de instalación:
+2. Run the setup script:
    ```bash
    ./scripts/init.sh
-   # Reinicia tu terminal o haz source de tu rc file
+   # Restart your terminal or source your rc file
    ```
 
 ### Windows (PowerShell)
 
-1. Clonar el repositorio.
-2. Ejecutar script:
+1. Clone the repository.
+2. Run the script:
    ```powershell
    .\scripts\init.ps1
-   # Reinicia tu sesión de PowerShell
+   # Restart your PowerShell session
    ```
 
-## Uso Básico
+## Basic Usage
 
 ```bash
-# Crear tarea
-tsk "Llamar a Jordi"
-tsk "Revisar logs" --today --priority high
-tsk "Comprar pan" --tomorrow
+# Create a task
+tsk "Call Jordi"
+tsk "Review logs" --today --priority high
+tsk "Buy bread" --tomorrow
 
-# Listar
-tsk list           # Pendientes y completadas (últimas arriba)
-tsk list --pending # Solo pendientes
-tsk list --done    # Solo hechas
+# List tasks
+tsk list           # Pending and completed (latest first)
+tsk list --pending # Pending only
+tsk list --done    # Completed only
 
-# Marcar como hecha
+# Mark as done
 tsk done 1
 
-# Borrar
+# Delete
 tsk del 1
-tsk del 2 3 4      # Múltiples IDs
+tsk del 2 3 4      # Multiple IDs
 
-# Buscar
+# Search
 tsk search "jordi"
 
-# Configuración
+# Configuration
 tsk config show
-tsk config set sort_order asc   # Cambiar orden
+tsk config set sort_order asc   # Change order
 tsk config set show_completed false
 ```
 
-## Estructura del Proyecto
+## Project Structure
 
-- `src/tskcli`: Código fuente (Python).
-- `scripts/`: Scripts de inicialización.
-- `tests/`: Tests automatizados.
+- `src/tskcli`: Source code (Python).
+- `scripts/`: Setup scripts.
+- `tests/`: Automated tests.
 
-## Requisitos
+## Requirements
 
 - Python 3.9+
-- `rich` (se instala automáticamente)
+- `rich` (installed automatically)
